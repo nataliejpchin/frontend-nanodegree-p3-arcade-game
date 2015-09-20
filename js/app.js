@@ -35,19 +35,19 @@ Enemy.prototype.render = function() {
 // This class requires an update(), render() and
 // a handleInput() method.
 var Player = function() {
+  
+    //set player initial location
+    this.x = 200;
+    this.y = 400; 
     
     // load player image
     this.sprite = 'images/char-boy.png';
     
-    //set player initial location
-    this.x = 200;
-    this.y = 400;    
-    
 };
 
-//want the player to always start at the same spot
+//left empty because want the player to always start at the same spot
 Player.prototype.update = function(dt) {
-
+    
 };
 
 //draw the player on the screen
@@ -56,8 +56,17 @@ Player.prototype.render = function() {
 };
 
 //moves the player
-Player.prototype.handleInput = function(dt) {
-  
+Player.prototype.handleInput = function(keyUp) {
+    
+    if (keyUp === 'left'){
+      this.x = this.x - 101;
+    } else if (keyUp === 'right'){
+        this.x = this.x + 101;
+    } else if (keyUp === 'up'){
+        this.y = this.y - 80;
+    } else if (keyUp === 'down'){
+        this.y = this.y + 80;
+    }
 };
 
 
