@@ -40,13 +40,13 @@ Enemy.prototype.render = function() {
 // This class requires an update(), render() and
 // a handleInput() method.
 
-var initialPlayerX = 200;
-var initialPlayerY = 404;
+var INITIAL_PLAYER_X = 200;
+var INITIAL_PLAYER_Y = 404;
 
 var Player = function() {
     // set player initial location
-    this.x = initialPlayerX;
-    this.y = initialPlayerY;
+    this.x = INITIAL_PLAYER_X;
+    this.y = INITIAL_PLAYER_Y;
 
     // load player image
     this.sprite = 'images/char-boy.png';
@@ -65,22 +65,29 @@ Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
+var LEFT_WALL = 0;
+var RIGHT_WALL = 400;
+var TOP_WALL = 0;
+var BOTTOM_WALL = 404;
+var PLAYER_HEIGHT = 101;
+var PLAYER_WIDTH = 83;
+
 // moves the player up, down, left, right
 Player.prototype.handleInput = function(keyUp) {
-    if (keyUp === 'left' && this.x > 0) {
-        this.x = this.x - 101;
-    } else if (keyUp === 'right' && this.x < 400) {
-        this.x = this.x + 101;
-    } else if (keyUp === 'up' && this.y > 0) {
-        this.y = this.y - 83;
-    } else if (keyUp === 'down' && this.y < 404) {
-        this.y = this.y + 83;
+    if (keyUp === 'left' && this.x > LEFT_WALL) {
+        this.x = this.x - PLAYER_HEIGHT;
+    } else if (keyUp === 'right' && this.x < RIGHT_WALL) {
+        this.x = this.x + PLAYER_HEIGHT;
+    } else if (keyUp === 'up' && this.y > TOP_WALL) {
+        this.y = this.y - PLAYER_WIDTH;
+    } else if (keyUp === 'down' && this.y < BOTTOM_WALL) {
+        this.y = this.y + PLAYER_WIDTH;
     }
 };
 
 Player.prototype.resetPlayer = function() {
-    this.x = initialPlayerX;
-    this.y = initialPlayerY;
+    this.x = INITIAL_PLAYER_X;
+    this.y = INITIAL_PLAYER_Y;
 };
 
 
