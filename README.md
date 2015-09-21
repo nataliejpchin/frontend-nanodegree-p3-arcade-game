@@ -1,6 +1,13 @@
 frontend-nanodegree-arcade-game
 ===============================
 
-Students should use this rubric: https://www.udacity.com/course/viewer#!/c-ud015/l-3072058665/m-3072588797
+### How to Start Game
 
-for self-checking their submission.
+1. Open index.html in your browser
+
+### How to Play
+
+1. Press the up, down, left, right arrow key to move your character in the respective direction.
+2. The goal of the game is to reach the water.
+3. You are not allowed to move pass the edge on top, right, bottom and left.
+4. If you run into an enemy-bug, your position will be reset back to the original position.
