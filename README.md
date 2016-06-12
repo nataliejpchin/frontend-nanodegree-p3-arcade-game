@@ -3,7 +3,7 @@ frontend-nanodegree-arcade-game
 
 ### How to Start Game
 
-Open index.html in your browser OR http://njpchin.github.io/frontend-nanodegree-p3-arcade-game
+Open index.html in your browser OR http://nataliejpchin.github.io/frontend-nanodegree-p3-arcade-game
 
 ### How to Play
 
